@@ -1,0 +1,20 @@
+[package]
+name = "tc-swiftbridge"
+version = "0.0.1"
+edition = "2021"
+publish = false
+rust-version = "1.81.0"  # MSRV
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+swift-bridge = "0.1"
+taskchampion = "=2.0.2"
+
+[features]
+# use native CA roots, instead of bundled
+tls-native-roots = ["taskchampion/tls-native-roots"]
+
+[build-dependencies]
+swift-bridge-build = "0.1"

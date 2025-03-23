@@ -1,0 +1,4 @@
+generated/
+target/
+taskchampion-swift/
+Cargo.lock
