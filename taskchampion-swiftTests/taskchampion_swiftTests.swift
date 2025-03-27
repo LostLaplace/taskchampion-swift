@@ -13,5 +13,13 @@ struct taskchampion_swiftTests {
     @Test func example() async throws {
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.
     }
+    
+    @Test func generate_uuid() {
+        let uuid = taskchampion_swift.Task.generate_uuid4();
+        let uuid_str = uuid.to_string().toString();
+        let uuid2 = try! taskchampion_swift.Task.uuid4_from_string(uuid: uuid_str);
+        #expect(uuid_str == uuid2.to_string().toString());
+    }
+    
 
 }

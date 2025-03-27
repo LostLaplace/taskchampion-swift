@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EB25C112D90C38D005D6D04 /* taskchampion_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB25C062D90C38D005D6D04 /* taskchampion_swift.framework */; };
+		7EB25C272D90D2E5005D6D04 /* TCSwiftbridge in Frameworks */ = {isa = PBXBuildFile; productRef = 7EB25C262D90D2E5005D6D04 /* TCSwiftbridge */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EB25C272D90D2E5005D6D04 /* TCSwiftbridge in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +121,7 @@
 			);
 			name = "taskchampion-swift";
 			packageProductDependencies = (
+				7EB25C262D90D2E5005D6D04 /* TCSwiftbridge */,
 			);
 			productName = "taskchampion-swift";
 			productReference = 7EB25C062D90C38D005D6D04 /* taskchampion_swift.framework */;
@@ -174,6 +177,9 @@
 			);
 			mainGroup = 7EB25BFC2D90C38D005D6D04;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7EB25C212D90C678005D6D04 /* XCLocalSwiftPackageReference "tc-swiftbridge/tc-swiftbridge" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7EB25C072D90C38D005D6D04 /* Products */;
 			projectDirPath = "";
@@ -503,6 +509,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		7EB25C212D90C678005D6D04 /* XCLocalSwiftPackageReference "tc-swiftbridge/tc-swiftbridge" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "tc-swiftbridge/tc-swiftbridge";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7EB25C262D90D2E5005D6D04 /* TCSwiftbridge */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TCSwiftbridge;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7EB25BFD2D90C38D005D6D04 /* Project object */;
 }

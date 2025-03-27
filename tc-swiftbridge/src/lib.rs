@@ -24,12 +24,6 @@ mod ffi {
 
         fn new_operations() -> Vec<Operation>;
     }
-
-    extern "Rust" {
-        type Uuid;
-
-        fn uuid_v4() -> Uuid;
-    }
 }
 
 pub struct Replica(tc::Replica);
@@ -64,54 +58,3 @@ fn operations_ref(ops: Vec<Operation>) -> Vec<tc::Operation> {
     unsafe { std::mem::transmute::<Vec<Operation>, Vec<tc::Operation>>(ops) }
 }
 
-struct Uuid {
-    v: [u8; 16],
-}
-
-impl From<Uuid> for tc::Uuid {
-    fn from(value: Uuid) -> Self {
-        tc::Uuid::from_bytes(value.v)
-    }
-}
-
-impl From<&Uuid> for tc::Uuid {
-    fn from(value: &Uuid) -> Self {
-        tc::Uuid::from_bytes(value.v)
-    }
-}
-
-impl From<tc::Uuid> for Uuid {
-    fn from(uuid: tc::Uuid) -> Uuid {
-        Uuid {
-            v: *uuid.as_bytes(),
-        }
-    }
-}
-
-impl From<&tc::Uuid> for Uuid {
-    fn from(uuid: &tc::Uuid) -> Uuid {
-        Uuid {
-            v: *uuid.as_bytes(),
-        }
-    }
-}
-
-fn uuid_v4() -> Uuid {
-    tc::Uuid::new_v4().into()
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn create_replica_in_memory() {
-        let replica = new_replica_in_memory();
-    }
-
-    #[test]
-    fn create_uuid() {
-        let uuid = uuid_v4();
-        assert!(uuid.v[0] != 0);
-    }
-}
