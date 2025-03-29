@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E9843002D98452500E0644B /* SwiftBridgeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9842FF2D98452500E0644B /* SwiftBridgeCore.swift */; };
+		7E9843042D98470400E0644B /* tcSwiftBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9843032D98470400E0644B /* tcSwiftBridge.swift */; };
+		7E9843082D984B5F00E0644B /* libtc_swiftbridge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9842FC2D98412000E0644B /* libtc_swiftbridge.a */; };
 		7EB25C112D90C38D005D6D04 /* taskchampion_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB25C062D90C38D005D6D04 /* taskchampion_swift.framework */; };
-		7EB25C272D90D2E5005D6D04 /* TCSwiftbridge in Frameworks */ = {isa = PBXBuildFile; productRef = 7EB25C262D90D2E5005D6D04 /* TCSwiftbridge */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +24,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E9842FA2D98410700E0644B /* libtc_swiftbridge.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtc_swiftbridge.a; path = "tc-swiftbridge/target/aarch64-apple-ios/debug/libtc_swiftbridge.a"; sourceTree = "<group>"; };
+		7E9842FC2D98412000E0644B /* libtc_swiftbridge.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtc_swiftbridge.a; path = "tc-swiftbridge/target/aarch64-apple-darwin/debug/libtc_swiftbridge.a"; sourceTree = "<group>"; };
+		7E9842FF2D98452500E0644B /* SwiftBridgeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftBridgeCore.swift; path = "tc-swiftbridge/generated/SwiftBridgeCore.swift"; sourceTree = "<group>"; };
+		7E9843032D98470400E0644B /* tcSwiftBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = tcSwiftBridge.swift; path = "tc-swiftbridge/generated/tc-swiftbridge/tcSwiftBridge.swift"; sourceTree = "<group>"; };
 		7EB25C062D90C38D005D6D04 /* taskchampion_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = taskchampion_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB25C102D90C38D005D6D04 /* taskchampion-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "taskchampion-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -57,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EB25C272D90D2E5005D6D04 /* TCSwiftbridge in Frameworks */,
+				7E9843082D984B5F00E0644B /* libtc_swiftbridge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,11 +78,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E9842F92D98410600E0644B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E9842FC2D98412000E0644B /* libtc_swiftbridge.a */,
+				7E9842FA2D98410700E0644B /* libtc_swiftbridge.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7EB25BFC2D90C38D005D6D04 = {
 			isa = PBXGroup;
 			children = (
+				7E9843032D98470400E0644B /* tcSwiftBridge.swift */,
+				7E9842FF2D98452500E0644B /* SwiftBridgeCore.swift */,
 				7EB25C082D90C38D005D6D04 /* taskchampion-swift */,
 				7EB25C142D90C38D005D6D04 /* taskchampion-swiftTests */,
+				7E9842F92D98410600E0644B /* Frameworks */,
 				7EB25C072D90C38D005D6D04 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,7 +139,6 @@
 			);
 			name = "taskchampion-swift";
 			packageProductDependencies = (
-				7EB25C262D90D2E5005D6D04 /* TCSwiftbridge */,
 			);
 			productName = "taskchampion-swift";
 			productReference = 7EB25C062D90C38D005D6D04 /* taskchampion_swift.framework */;
@@ -178,7 +195,6 @@
 			mainGroup = 7EB25BFC2D90C38D005D6D04;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				7EB25C212D90C678005D6D04 /* XCLocalSwiftPackageReference "tc-swiftbridge/tc-swiftbridge" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7EB25C072D90C38D005D6D04 /* Products */;
@@ -213,6 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9843002D98452500E0644B /* SwiftBridgeCore.swift in Sources */,
+				7E9843042D98470400E0644B /* tcSwiftBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +276,11 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/tc-swiftbridge/target/aarch64-apple-ios/debug",
+					"$(PROJECT_DIR)/tc-swiftbridge/target/aarch64-apple-darwin/debug",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
@@ -266,11 +289,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "taskchampion-swift/";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
@@ -299,6 +325,11 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/tc-swiftbridge/target/aarch64-apple-ios/debug",
+					"$(PROJECT_DIR)/tc-swiftbridge/target/aarch64-apple-darwin/debug",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
@@ -307,11 +338,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "taskchampion-swift/";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
@@ -369,6 +403,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=arm64]" = "../tc-swiftbridge/target/aarch64-apple-ios/debug/";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*][arch=arm64]" = "../tc-swiftbridge/target/aarch64-apple-ios-sim/debug/";
+				"LIBRARY_SEARCH_PATHS[sdk=macosx*][arch=arm64]" = "tc-swiftbridge/target/aarch64-apple-darwin/debug/";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -509,20 +546,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		7EB25C212D90C678005D6D04 /* XCLocalSwiftPackageReference "tc-swiftbridge/tc-swiftbridge" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "tc-swiftbridge/tc-swiftbridge";
-		};
-/* End XCLocalSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7EB25C262D90D2E5005D6D04 /* TCSwiftbridge */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TCSwiftbridge;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7EB25BFD2D90C38D005D6D04 /* Project object */;
 }

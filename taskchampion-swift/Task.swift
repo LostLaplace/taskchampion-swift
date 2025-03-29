@@ -5,9 +5,7 @@
 //  Created by Cameron Johnson on 3/23/25.
 //
 
-internal import TCSwiftbridge;
-
-class Task {
+class TaskWrapper {
     public var uuid: String;
     public var attributes: [String: String];
     
@@ -16,7 +14,7 @@ class Task {
         attributes = [:];
     }
     
-    init(fromTaskChampionTask: TCSwiftbridge.Task) {
+    init(fromTaskChampionTask: Task) {
         let fields = fromTaskChampionTask.get_fields();
         attributes = [:];
         
@@ -27,12 +25,12 @@ class Task {
         uuid = attributes["uuid"]!;
     }
     
-    static func generate_uuid4() -> TCSwiftbridge.Uuid {
-        return TCSwiftbridge.uuid_v4();
+    static func generate_uuid4() -> Uuid {
+        return uuid_v4();
     }
     
-    static func uuid4_from_string(uuid: String) throws -> TCSwiftbridge.Uuid {
-        return try TCSwiftbridge.uuid_from_string(uuid);
+    static func uuid4_from_string(uuid: String) throws -> Uuid {
+        return try uuid_from_string(uuid);
     }
 }
 

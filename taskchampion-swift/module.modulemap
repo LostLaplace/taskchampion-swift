@@ -1,0 +1,13 @@
+//
+//  module.modulemap
+//  taskchampion-swift
+//
+//  Created by Cameron Johnson on 3/29/25.
+//
+
+module tc {
+    header "../tc-swiftbridge/generated/SwiftBridgeCore.h"
+    header "../tc-swiftbridge/generated/tc-swiftbridge/tc-swiftbridge.h"
+
+    export *
+}
