@@ -1,7 +1,7 @@
 # taskchampion-swift
 
 This project aims to produce an XCFramework bundle bridging the gap between swift and the rust
-taskchampion library. This project could be consumed by downstream apps like [taskcham](https://github.com/marriagav/taskchamp)
+taskchampion library. This project could be consumed by downstream apps like [taskchamp](https://github.com/marriagav/taskchamp)
 to provide a more rich user experience and more native taskchampion features.
 
 ## Planned Features
